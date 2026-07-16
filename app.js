@@ -1,5 +1,6 @@
 // Load environment config in dev
-if (process.env.NODE_ENV !== "PRODUCTION") {
+//if (process.env.NODE_ENV !== "PRODUCTION") {
+if (process.env.NODE_ENV?.toLowerCase() !== "production") {
   require("dotenv").config({ path: "config/.env" });
 }
 const express = require("express");

@@ -2,10 +2,14 @@
 const sendToken = (user, statusCode, res, rememberMe = false) => {
   const token = user.getJwtToken(rememberMe);
 
+  const isProd = process.env.NODE_ENV?.toLowerCase() === "production";
   const options = {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "PRODUCTION",
-    sameSite: process.env.NODE_ENV === "PRODUCTION" ? "none" : "lax",
+     httpOnly: true,
+  secure: isProd,
+  sameSite: isProd ? "none" : "lax",
+   // httpOnly: true,
+    //secure: process.env.NODE_ENV === "PRODUCTION",
+    //sameSite: process.env.NODE_ENV === "PRODUCTION" ? "none" : "lax",
   };
 
   // only set an explicit expiry if "remember me" was checked.
