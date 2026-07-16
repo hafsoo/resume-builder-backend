@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "20mb" }));
 app.use(
   cors({
     // origin: "http://localhost:3000",
-    origin: "https://resume-builder-frontend-six-alpha.vercel.app" || "http://localhost:3000",
+    //origin: "https://resume-builder-frontend-six-alpha.vercel.app" || "http://localhost:3000",
+      origin: ["https://resume-builder-frontend-six-alpha.vercel.app"],
     credentials:true,
 })
 );
