@@ -8,8 +8,7 @@ const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const { isAuthenticated } = require("../middleware/auth");
 //const puppeteer = require("puppeteer");
     // PDF generate karo resume HTML se
-    const chromium = (await import("@sparticuz/chromium")).default;
-    const puppeteer = (await import("puppeteer-core")).default;
+
 
 const sendMail = require("../utils/sendMail");
 
@@ -386,6 +385,8 @@ router.post(
     //"--window-size=1,1",
     //],
     //});
+        const chromium = (await import("@sparticuz/chromium")).default;
+    const puppeteer = (await import("puppeteer-core")).default;
      const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
